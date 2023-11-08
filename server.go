@@ -360,13 +360,13 @@ func Serve(opts *ServeConfig) {
 	// while stdio works. This is because in test mode, we assume we're running
 	// in `go test` or some equivalent and we want output to go to standard
 	// locations.
-	if opts.Test != nil {
-		// TODO(mitchellh): This isn't super ideal because a TeeReader
-		// only works if the reader side is actively read. If we never
-		// connect via a plugin client, the output still gets swallowed.
-		stdout_r = io.TeeReader(stdout_r, os.Stdout)
-		// stderr_r = io.TeeReader(stderr_r, os.Stderr)
-	}
+	// if opts.Test != nil {
+	// TODO(mitchellh): This isn't super ideal because a TeeReader
+	// only works if the reader side is actively read. If we never
+	// connect via a plugin client, the output still gets swallowed.
+	// stdout_r = io.TeeReader(stdout_r, os.Stdout)
+	// stderr_r = io.TeeReader(stderr_r, os.Stderr)
+	// }
 
 	// Build the server type
 	var server ServerProtocol
