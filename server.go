@@ -365,7 +365,7 @@ func Serve(opts *ServeConfig) {
 		// only works if the reader side is actively read. If we never
 		// connect via a plugin client, the output still gets swallowed.
 		stdout_r = io.TeeReader(stdout_r, os.Stdout)
-		stderr_r = io.TeeReader(stderr_r, os.Stderr)
+		// stderr_r = io.TeeReader(stderr_r, os.Stderr)
 	}
 
 	// Build the server type
